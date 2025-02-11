@@ -1,4 +1,4 @@
-#derivative
+#derivative (This section demonstrates how to do derivative in R)
 library(stats) #import package "stats"
 f1.exp <- expression(x^2 + 3*x +1) # define the function we want to differentiate
 dx1 <- D(f1.exp,"x") # first derivative
@@ -25,12 +25,13 @@ y <- 2:5
 eval(dx1)#calculable, but a warning message appears
 eval(dy1)
 #the shoter vector will repeat
-#gradient descent
+######################################################################################################
+#gradient descent (This section displays how to implement gradient descent in R)
 #2-dimentional case
 #find the minimum value of f(x) = 5*x^6-3*x^3-2*x^2+x-10
 f <- expression(5*x^6-3*x^3-2*x^2+x-10) #define function
-# define gradientdescent function, where gamma is our learning rate(0 to 1 usually), and iter is 
-how many times we try to find our minimum.
+# define gradientdescent function, where gamma is our learning rate(0 to 1 usually), and iter is
+# how many times we try to find our minimum.
 gradientDesc_D2 <- function(f,initial_value,gamma,iter)
 {
   l <- gamma
@@ -63,7 +64,7 @@ fx <- function(x){
   return(5*x^6-3*x^3-2*x^2+x-10)
 }
 curve(fx,-1,1)
-#we find that Gradint Descent only found local minimum
+#we find that Gradient Descent only found local minimum
 #try to adjust our learning rate
 gradientDesc_D2(f,x,0.0012,500)
 #we find the global minimum
